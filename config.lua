@@ -1,6 +1,4 @@
 Config = {}
-
-Config.Redemrp_Inventory2 = false
 Config.Blips = true
 
 Config.Animal = {
