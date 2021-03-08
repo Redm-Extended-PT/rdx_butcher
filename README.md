@@ -1,4 +1,5 @@
-# redemrp_butcher
+# rdx_crypto_butcher
+
 Butcher table locations made to sell pelts/carcasses with redem_roleplay framework.
 
 When holding a pelt or a carcass at a butcher location, recieve a native prompt to sell the item to the butcher.
@@ -12,9 +13,9 @@ When holding a pelt or a carcass at a butcher location, recieve a native prompt 
 6. Profit
 
 # Required resource
-- redem_roleplay
-- redemrp_notification
+- redm_extended
 
 # Made by
 - CryptoGenics
+- Converted by ValiantCraven27
 - Thanks to https://github.com/OTRP for the config setup
