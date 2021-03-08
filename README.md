@@ -7,10 +7,11 @@ When holding a pelt or a carcass at a butcher location, recieve a native prompt 
 # Installation
 1. Clone this repository.
 2. Extract the zip.
-3. Put redemrp_butcher to your resource folder.
-4. Add "start redemrp_butcher" in your "server.cfg".
-5. Edit config to your liking.
-6. Profit
+3. import SQL file into database
+4. Put rdx_crypto_butcher to your resource folder.
+5. Add "start rdx_crypto_butcher" in your "server.cfg".
+6. Edit config to your liking.
+7. Profit
 
 # Required resource
 - redm_extended
