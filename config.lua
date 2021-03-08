@@ -71,11 +71,11 @@ Config.Animal = {
     [65] = {["name"] = "North American Beaver",    ["model"] = 759906147,    ["item"] = "item_meat_stringy",     ["poor"] = -1569450319, ["good"] = -2059726619, ["perfect"] = 854596618,   ["reward"] = 2, ["xp"] = 2 },
     [66] = {["name"] = "American Black Bear",      ["model"] = 730092646,    ["item"] = "item_pelt_bear_black",  ["poor"] = 1083865179,  ["good"] = 1490032862,  ["perfect"] = 663376218,   ["reward"] = 19, ["xp"] = 4 },
 
-    [67] = {["name"] = "Longnose Gar",             ["model"] = -711779521,   ["item"] = "fish",     ["poor"] = nil,         ["good"] = nil,         ["perfect"] = nil,         ["reward"] = 0.3,  ["xp"] = 4  },
-    [68] = {["name"] = "Muskie",                   ["model"] = -1553593715,  ["item"] = "fish",     ["poor"] = nil,         ["good"] = nil,         ["perfect"] = nil,         ["reward"] = 0.3,  ["xp"] = 4  },
-    [69] = {["name"] = "Lake Sturgeon",            ["model"] = -300867788,   ["item"] = "fish",     ["poor"] = nil,         ["good"] = nil,         ["perfect"] = nil,         ["reward"] = 0.3,  ["xp"] = 4  },
-    [70] = {["name"] = "Channel Catfish",          ["model"] = 1538187374,   ["item"] = "fish",     ["poor"] = nil,         ["good"] = nil,         ["perfect"] = nil,         ["reward"] = 0.3,  ["xp"] = 4  },
-    [71] = {["name"] = "Northern Pike",            ["model"] = 697075200,    ["item"] = "fish",     ["poor"] = nil,         ["good"] = nil,         ["perfect"] = nil,         ["reward"] = 0.25, ["xp"] = 4  },
+    [67] = {["name"] = "Longnose Gar",             ["model"] = -711779521,   ["item"] = "item_fish",     ["poor"] = nil,         ["good"] = nil,         ["perfect"] = nil,         ["reward"] = 0.3,  ["xp"] = 4  },
+    [68] = {["name"] = "Muskie",                   ["model"] = -1553593715,  ["item"] = "item_fish",     ["poor"] = nil,         ["good"] = nil,         ["perfect"] = nil,         ["reward"] = 0.3,  ["xp"] = 4  },
+    [69] = {["name"] = "Lake Sturgeon",            ["model"] = -300867788,   ["item"] = "item_fish",     ["poor"] = nil,         ["good"] = nil,         ["perfect"] = nil,         ["reward"] = 0.3,  ["xp"] = 4  },
+    [70] = {["name"] = "Channel Catfish",          ["model"] = 1538187374,   ["item"] = "item_fish",     ["poor"] = nil,         ["good"] = nil,         ["perfect"] = nil,         ["reward"] = 0.3,  ["xp"] = 4  },
+    [71] = {["name"] = "Northern Pike",            ["model"] = 697075200,    ["item"] = "item_fish",     ["poor"] = nil,         ["good"] = nil,         ["perfect"] = nil,         ["reward"] = 0.25, ["xp"] = 4  },
 }
 
 
