@@ -112,7 +112,7 @@ function Selltobutcher()
                                 TriggerServerEvent("cryptos_butcher:reward", reward)
                                 
                             else
-                                --TriggerEvent("redemrp_notification:start", "DELETE ENTITY NATIVE IS SCUFFED - RELOG PLZ", 2, "success")
+                               RDX.ShowNotification("DELETE ENTITY NATIVE IS SCUFFED - RELOG PLZ", "error")
                             end
 
                         end
@@ -131,7 +131,8 @@ function Selltobutcher()
                                 TriggerServerEvent("cryptos_butcher:reward", reward)
                                
                             else
-                                --TriggerEvent("redemrp_notification:start", "DELETE ENTITY NATIVE IS SCUFFED - RELOG PLZ", 2, "success")
+		                  RDX.ShowNotification("DELETE ENTITY NATIVE IS SCUFFED - RELOG PLZ", "error")
+                              
                             end
 
                         elseif quality == Config.Animal[i]["good"] then
@@ -147,7 +148,7 @@ function Selltobutcher()
                                 TriggerServerEvent("cryptos_butcher:reward", reward)
                                 
                             else
-                                --TriggerEvent("redemrp_notification:start", "DELETE ENTITY NATIVE IS SCUFFED - RELOG PLZ", 2, "success")
+                                RDX.ShowNotification("DELETE ENTITY NATIVE IS SCUFFED - RELOG PLZ", "error")
                             end
 
                         elseif quality == Config.Animal[i]["perfect"] then
@@ -162,14 +163,15 @@ function Selltobutcher()
                                 TriggerServerEvent("cryptos_butcher:reward", reward)
                             
                             else
-                                --TriggerEvent("redemrp_notification:start", "DELETE ENTITY NATIVE IS SCUFFED - RELOG PLZ", 2, "success")
+                                RDX.ShowNotification("DELETE ENTITY NATIVE IS SCUFFED - RELOG PLZ", "error")
                             end
 
                         end
                     end
                 end
             else
-               -- TriggerEvent("redemrp_notification:start", "Not Holding Anything", 2, "error")
+		RDX.ShowNotification("Not Holding Anything", "error")
+              
             end
         end
     end
