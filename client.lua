@@ -1,12 +1,11 @@
 RDX = nil
-TriggerServerEvent("cryptos_butcher:reward", reward)
+
 Citizen.CreateThread(function()
 	while RDX == nil do
 		TriggerEvent('rdx:getSharedObject', function(obj) RDX = obj end)
 		Citizen.Wait(100)
 	end
 end)
-
 
 local ButcherPrompt
 local hasAlreadyEnteredMarker
@@ -16,7 +15,7 @@ local PromptGorup = GetRandomIntInRange(0, 0xffffff)
 
 function SetupButcherPrompt()
     Citizen.CreateThread(function()
-        local str = 'Sell Item'
+        local str = 'Sell Hunt'
         ButcherPrompt = PromptRegisterBegin()
         PromptSetControlAction(ButcherPrompt, 0xE8342FF2)
         str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -53,7 +52,7 @@ Citizen.CreateThread(function()
 
         for _,v in pairs(Config.shops) do 
             local distance = #(coords - v.coords)
-            if distance < 1.5 then
+            if distance < 2.5 then
                 local holding = Citizen.InvokeNative(0xD806CD2A4F2C2996, ped)
                 if holding ~= false then
                     isInMarker  = true
@@ -70,24 +69,6 @@ Citizen.CreateThread(function()
 		if not isInMarker and hasAlreadyEnteredMarker then
 			hasAlreadyEnteredMarker = false
 			currentZone = nil
-		end
-	end
-end)
-
--- Key Controls
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(0)
-
-        if currentZone then
-            local label  = CreateVarString(10, 'LITERAL_STRING', "Butcher")
-            PromptSetActiveGroupThisFrame(PromptGorup, label)
-            if PromptHasHoldModeCompleted(ButcherPrompt) then
-                Selltobutcher()
-				currentZone = nil
-			end
-        else
-			Citizen.Wait(500)
 		end
 	end
 end)
@@ -129,7 +110,7 @@ function Selltobutcher()
                             if deleted then
                                  TriggerServerEvent("cryptos_butcher:giveitem", Config.Animal[i]["item"], 1)
                                 TriggerServerEvent("cryptos_butcher:reward", reward)
-                                --TriggerEvent("redemrp_notification:start", "You earned $" .. reward .. ", " .. level .. " xp and " .. Config.Animal[i]["item"] .. ' Meat', 5, "success")
+                                
                             else
                                 --TriggerEvent("redemrp_notification:start", "DELETE ENTITY NATIVE IS SCUFFED - RELOG PLZ", 2, "success")
                             end
@@ -148,7 +129,7 @@ function Selltobutcher()
                             if deleted then
                                 TriggerServerEvent("cryptos_butcher:giveitem", Config.Animal[i]["item"], 1)
                                 TriggerServerEvent("cryptos_butcher:reward", reward)
-                               -- TriggerEvent("redemrp_notification:start", "You earned $" .. reward .. " and " .. level .. " xp", 5, "success")
+                               
                             else
                                 --TriggerEvent("redemrp_notification:start", "DELETE ENTITY NATIVE IS SCUFFED - RELOG PLZ", 2, "success")
                             end
@@ -164,7 +145,7 @@ function Selltobutcher()
                             if deleted then
                                 TriggerServerEvent("cryptos_butcher:giveitem", Config.Animal[i]["item"], 1)
                                 TriggerServerEvent("cryptos_butcher:reward", reward)
-                                --TriggerEvent("redemrp_notification:start", "You earned $" .. reward .. " and " .. level .. " xp", 5, "success")
+                                
                             else
                                 --TriggerEvent("redemrp_notification:start", "DELETE ENTITY NATIVE IS SCUFFED - RELOG PLZ", 2, "success")
                             end
@@ -179,7 +160,7 @@ function Selltobutcher()
                             if deleted then
                                 TriggerServerEvent("cryptos_butcher:giveitem", Config.Animal[i]["item"], 1)
                                 TriggerServerEvent("cryptos_butcher:reward", reward)
-                             -- TriggerEvent("redemrp_notification:start", "You earned $" .. reward .. " and " .. level .. " xp", 5, "success")
+                            
                             else
                                 --TriggerEvent("redemrp_notification:start", "DELETE ENTITY NATIVE IS SCUFFED - RELOG PLZ", 2, "success")
                             end
@@ -200,6 +181,145 @@ AddEventHandler('onResourceStop', function(resource)
         PromptSetVisible(ButcherPrompt, false)
         for k,v in pairs(blip) do
             RemoveBlip(blip[k])
+            DeleteEntity(butcher01)
+             DeleteEntity(butcher02)
+               DeleteEntity(butcher03)
+                 DeleteEntity(butcher04)
+                  DeleteEntity(butcher05)
+                   DeleteEntity(butcher06)
         end
     end
+end)
+
+-- Key Controls for butcher01
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(1)
+ 
+ playerCoords = GetEntityCoords(PlayerPedId())
+ butcher01Coords = GetEntityCoords(butcher01)     
+       FreezeEntityPosition(butcher01, true)
+        if GetDistanceBetweenCoords(playerCoords,butcher01Coords, true) < 3 and DoesEntityExist(butcher01) and GetEntityHealth(butcher01)  >= 1 then
+            local label  = CreateVarString(10, 'LITERAL_STRING', "Butcher")
+             PromptSetActiveGroupThisFrame(PromptGorup, label)
+             NTRP.NPCText("Butcher", 0.40, 0.40, 0.5, 0.85, 164, 0, 20, 1)
+             NTRP.NPCText(Config.Text, 0.35, 0.35, 0.5, 0.88, 255, 255, 255, 0)
+            if PromptHasHoldModeCompleted(ButcherPrompt) and Citizen.InvokeNative(0xD806CD2A4F2C2996, PlayerPedId())then
+                Selltobutcher()
+				currentZone = nil
+			end
+        else
+			Citizen.Wait(500)
+		end
+	end
+end)
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(1)
+ 
+ playerCoords = GetEntityCoords(PlayerPedId())
+ butcher02Coords = GetEntityCoords(butcher02)      
+       FreezeEntityPosition(butcher02, true)
+        if GetDistanceBetweenCoords(playerCoords,butcher02Coords, true) < 3 and DoesEntityExist(butcher02) and GetEntityHealth(butcher02)  >= 1 then
+            local label  = CreateVarString(10, 'LITERAL_STRING', "Butcher")
+            PromptSetActiveGroupThisFrame(PromptGorup, label)
+             NTRP.NPCText("Butcher", 0.40, 0.40, 0.5, 0.85, 164, 0, 20, 1)
+             NTRP.NPCText(Config.Text, 0.35, 0.35, 0.5, 0.88, 255, 255, 255, 0)
+            if PromptHasHoldModeCompleted(ButcherPrompt) then
+                Selltobutcher()
+				currentZone = nil
+			end
+        else
+			Citizen.Wait(500)
+		end
+	end
+end)
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(1)
+
+ playerCoords = GetEntityCoords(PlayerPedId())
+ butcher03Coords = GetEntityCoords(butcher03)      
+       FreezeEntityPosition(butcher03, true)	
+        if GetDistanceBetweenCoords(playerCoords,butcher03Coords, true) < 3 and DoesEntityExist(butcher03) and GetEntityHealth(butcher03)  >= 1 then
+            local label  = CreateVarString(10, 'LITERAL_STRING', "Butcher")
+            PromptSetActiveGroupThisFrame(PromptGorup, label)
+             NTRP.NPCText("Butcher", 0.40, 0.40, 0.5, 0.85, 164, 0, 20, 1)
+             NTRP.NPCText(Config.Text, 0.35, 0.35, 0.5, 0.88, 255, 255, 255, 0)
+            if PromptHasHoldModeCompleted(ButcherPrompt) then
+                Selltobutcher()
+				currentZone = nil
+			end
+        else
+			Citizen.Wait(500)
+		end
+	end
+end)
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(1)
+
+ playerCoords = GetEntityCoords(PlayerPedId())
+ butcher04Coords = GetEntityCoords(butcher04)      
+        FreezeEntityPosition(butcher04, true)
+        if GetDistanceBetweenCoords(playerCoords,butcher04Coords, true) < 3 and DoesEntityExist(butcher04) and GetEntityHealth(butcher04)  >= 1 then
+            local label  = CreateVarString(10, 'LITERAL_STRING', "Butcher")
+            PromptSetActiveGroupThisFrame(PromptGorup, label)
+             NTRP.NPCText("Butcher", 0.40, 0.40, 0.5, 0.85, 164, 0, 20, 1)
+             NTRP.NPCText(Config.Text, 0.35, 0.35, 0.5, 0.88, 255, 255, 255, 0)
+            if PromptHasHoldModeCompleted(ButcherPrompt)  then
+                Selltobutcher()
+				currentZone = nil
+			end
+        else
+			Citizen.Wait(500)
+		end
+	end
+end)
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(1)
+
+ playerCoords = GetEntityCoords(PlayerPedId())
+ butcher05Coords = GetEntityCoords(butcher05)      
+        FreezeEntityPosition(butcher05, true)
+        if GetDistanceBetweenCoords(playerCoords,butcher05Coords, true) < 3 and DoesEntityExist(butcher05) and GetEntityHealth(butcher05)  >= 1 then
+            local label  = CreateVarString(10, 'LITERAL_STRING', "Butcher")
+            PromptSetActiveGroupThisFrame(PromptGorup, label)
+            NTRP.NPCText("Butcher", 0.40, 0.40, 0.5, 0.85, 164, 0, 20, 1)
+            NTRP.NPCText(Config.Text, 0.35, 0.35, 0.5, 0.88, 255, 255, 255, 0)
+            if PromptHasHoldModeCompleted(ButcherPrompt)  then
+                Selltobutcher()
+				currentZone = nil
+			end
+        else
+			Citizen.Wait(500)
+		end
+	end
+end)
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(1)
+ 
+ playerCoords = GetEntityCoords(PlayerPedId())
+ butcher06Coords = GetEntityCoords(butcher06)        
+        FreezeEntityPosition(butcher06, true)
+        if GetDistanceBetweenCoords(playerCoords,butcher06Coords, true) < 3 and DoesEntityExist(butcher06) and GetEntityHealth(butcher06)  >= 1 then
+            local label  = CreateVarString(10, 'LITERAL_STRING', "Butcher")
+            PromptSetActiveGroupThisFrame(PromptGorup, label)
+            NTRP.NPCText("Butcher", 0.40, 0.40, 0.5, 0.85, 164, 0, 20, 1)
+            NTRP.NPCText(Config.Text, 0.35, 0.35, 0.5, 0.88, 255, 255, 255, 0)
+            if PromptHasHoldModeCompleted(ButcherPrompt) then
+                Selltobutcher()
+				currentZone = nil
+			end
+        else
+			Citizen.Wait(500)
+		end
+	end
 end)

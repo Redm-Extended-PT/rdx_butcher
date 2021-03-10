@@ -4,7 +4,9 @@ game "rdr3"
 
 client_scripts {
 	'config.lua',
+                 'functions.lua',
 	'client.lua'
+               
 }
 
 server_scripts {
