@@ -101,12 +101,10 @@ Config.Animal = {
 
 
 Config.shops = {
-    {["name"] = "Saint Denis",["coords"] = vector3(2816.37, -1322.24, 46.61), ["gain"] = 1.11,},
-    {["name"] = "Valentine", ["coords"] = vector3(-341.07, 767.35, 116.71), ["gain"] = 1.11,},
-    {["name"] = "Rhodes", ["coords"] = vector3(1296.36, -1279.26, 75.84), ["gain"] = 1.11,},
-    {["name"] = "Tumbleweed", ["coords"] = vector3(-5508.10, -2947.73, -1.87), ["gain"] = 1.11,},
-    -- {["name"] = "Anusburg", ["coords"] = vector3(2932.54, 1302.00, 44.48), ["gain"] = 1.11,},
-    -- {["name"] = "Van Horn", ["coords"] = vector3(2994.23, 571.79, 44.35), ["gain"] = 1.33,},
-    {["name"] = "Blackwater", ["coords"] = vector3(-877.19, -1343.62, 43.29), ["gain"] = 1.11,},
-    {["name"] = "Strawberry", ["coords"] = vector3(-1752.91, -394.74, 156.19), ["gain"] = 1.11,}
+    {["name"] = "Saint Denis",["coords"] = vector3(2816.37, -1322.24, 46.61), ["gain"] = 1.50,},
+    {["name"] = "Valentine", ["coords"] = vector3(-341.07, 767.35, 116.71), ["gain"] = 1.5,},
+    {["name"] = "Rhodes", ["coords"] = vector3(1296.36, -1279.26, 75.84), ["gain"] = 1.5,},
+    {["name"] = "Tumbleweed", ["coords"] = vector3(-5508.10, -2947.73, -1.87), ["gain"] = 1.5,},    
+    {["name"] = "Blackwater", ["coords"] = vector3(-751.15, -1284.81, 58.33), ["gain"] = 1.5,},
+    {["name"] = "Strawberry", ["coords"] = vector3(-1752.91, -394.74, 156.19), ["gain"] = 1.5,}
 }
