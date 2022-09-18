@@ -18,6 +18,4 @@ When holding a pelt or a carcass at a butcher location, recieve a native prompt 
 # Made by
 - if butchers npcs killed cannot sell in that area
 - added butchers npcs
-- CryptoGenics
-- Converted to redm_extended by ValiantCraven27
-- Thanks to https://github.com/OTRP for the config setup
+- Converted to redm_extended by Vision
